@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="glav">
+        <div class="header">
+            <img src="./img/i.png" alt="">
+            <h1>Todo App</h1>
+        </div>
+
+        <div class="box">
+            <div class="task-category">
+                <h2 class="osnova">work</h2>
+                <ul id="task-list">
+                    <li>
+                        <input type="checkbox"> Finish quarterly report
+                        <br>
+                        <span class="due-date">Due: 2023-06-15</span>
+                        <button class="delete-btn"><img src="./img/icons8-кнопка-удалить-50.png" alt=""></button>
+                    </li>
+                    <li>
+                        <input type="checkbox"> Prepare presentation for team meeting
+                        <br>
+                        <span class="due-date">Due: 2023-05-25</span>
+                        <button class="delete-btn"><img src="./img/icons8-кнопка-удалить-50.png" alt=""></button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="task_modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+                <form id="task_form" onsubmit="addTask(event)">
+                    <input type="text" id="task_name" name="task_name" placeholder="Add a new task" list="task_options">
+                    <datalist id="task_options">
+                        <option value="Work">
+                        <option value="Home">
+                        <option value="Students">
+                    </datalist>
+                    <select id="task_category" name="task_category">
+                        <option value="Personal">Personal</option>
+                        <option value="Work">Work</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <select id="task_priority" name="task_priority">
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                    <input type="date" id="task_date" name="task_date">
+                    <textarea id="task_notes" name="task_notes" placeholder="Add notes"></textarea>
+                    <button type="submit">Add Task</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="create_element">
+            <button class="create_element_btn" onclick="openModal()">Create title</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
